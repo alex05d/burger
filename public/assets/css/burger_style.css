@@ -1,0 +1,28 @@
+
+.jumbotron {
+    padding: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-right: 40px;
+    margin-left: 40px;
+    height: auto;
+}
+
+ul, #new_burgers {
+    float: left;
+    width: 300px;
+}
+ul, #devoured {
+    float: right;
+    width: 300px;
+}
+
+li {
+    width: 150px;
+    margin-top: 15px;
+}
+.form {
+    text-align: center;
+    width: 600px;
+    margin: auto;
+}
