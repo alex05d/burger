@@ -1,29 +1,48 @@
-<h1>Burgers!!</h1>
-
-<div class="forms">
-    <form class="create-form">
-
-        <div class="form-group">
-            <input type="text" id="burger" name="name" placeholder=" Add a Burger!">
+<div id="wrapper">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <img src="/assets/img/burger.png" alt="burger_image" style="height: 100px; width: 100px;">
         </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-12 justify-content-center">
+                <h1>Burgers!!</h1>
 
-        <button type="submit">Add Now!</button>
-    </form>
+
+                <div class="forms">
+                    <form class="create-form ">
+
+                        <div class="form-group">
+                            <input type="text" id="burger" name="name" placeholder=" Add a Burger!">
+                        </div>
+
+                        <button type="submit">Add Now!</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-3 justify-content-center">
+                <h2>Time to eat!</h2>
+                <ul id="new_burgers">
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    {{> burgers/burger-block devoured=true}}
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="col-4"></div>
+
+            <div class="col-3 justify-content-center">
+                <h2>Im still hungry..</h2>
+                <ul id="devoured">
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    {{> burgers/burger-block devoured=false}}
+                    {{/if}}
+                    {{/each}}
+                </ul>
+
+            </div j>
+        </div>
+    </div>
 </div>
-
-<ul id="new_burgers">
-    {{#each burgers}}
-    {{#unless devoured}}
-    {{> burgers/burger-block devoured=true}}
-    {{/unless}}
-    {{/each}}
-</ul>
-
-
-<ul id="devoured">
-    {{#each burgers}}
-    {{#if devoured}}
-    {{> burgers/burger-block devoured=false}}
-    {{/if}}
-    {{/each}}
-</ul>
